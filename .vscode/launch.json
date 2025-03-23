@@ -1,0 +1,14 @@
+
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug Embedded App",
+      "program": "${workspaceFolder}/target/debug/rust-test.exe", // 替换为实际二进制路径
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "cargo build --target thumbv7em-none-eabihf" // 交叉编译命令‌:ml-citation{ref="2,8" data="citationList"}
+    }
+  ]
+}
