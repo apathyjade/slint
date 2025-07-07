@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Three.js + WASM 示例</title>
+    <!-- <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script> -->
+    <!-- 引入 FBX 加载器 -->
+    <!-- <script src="https://unpkg.com/three@0.160.0/files/examples/jsm/loaders/FBXLoader.js"></script> -->
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+
+<!-- <script type="module" src="./main.js"></script>WWW  -->
+<script type="module">
+    import loadWasmModule, { cus_log, greet } from './pkg/my_wasm_project.js';
+    loadWasmModule().then(() => {
+        cus_log('greet:' + greet('jade'));
+    });
+</script>
+</html>

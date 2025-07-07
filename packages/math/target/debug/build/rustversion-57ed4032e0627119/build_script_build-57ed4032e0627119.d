@@ -1,0 +1,6 @@
+D:\project\github\apathyjade\rust-test\packages\math\target\debug\build\rustversion-57ed4032e0627119\build_script_build-57ed4032e0627119.exe: C:\Users\apath\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\rustversion-1.0.21\build\build.rs C:\Users\apath\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\rustversion-1.0.21\build\rustc.rs
+
+D:\project\github\apathyjade\rust-test\packages\math\target\debug\build\rustversion-57ed4032e0627119\build_script_build-57ed4032e0627119.d: C:\Users\apath\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\rustversion-1.0.21\build\build.rs C:\Users\apath\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\rustversion-1.0.21\build\rustc.rs
+
+C:\Users\apath\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\rustversion-1.0.21\build\build.rs:
+C:\Users\apath\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\rustversion-1.0.21\build\rustc.rs:
