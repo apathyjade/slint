@@ -11,6 +11,7 @@
             height: 100%;
             font-family: "Microsoft YaHei";
         }
+
         #canvas {
             display: block;
             width: 100% !important;
@@ -21,19 +22,20 @@
     </style>
 </head>
 <body>
-    <canvas id="canvas"></canvas>
-    <script type="module">
-        // 加载 Wasm 模块
-        import init from "./pkg/web.js";
-        init().then(() => {
-            console.log("Slint Web 应用启动成功", run);
-            // const canvas = document.getElementById('canvas');
+<canvas id="canvas"></canvas>
+<script type="module">
+    // 加载 Wasm 模块
+    import init from "./pkg/web.js";
 
-            // const ctx = canvas.getContext('2d');
-            // console.log("Canvas 使用的字体:", ctx.font);
-        });
+    init().then(() => {
+        console.log("Slint Web 应用启动成功", run);
+        // const canvas = document.getElementById('canvas');
 
-        
-    </script>
+        // const ctx = canvas.getContext('2d');
+        // console.log("Canvas 使用的字体:", ctx.font);
+    });
+
+
+</script>
 </body>
 </html>
