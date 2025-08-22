@@ -1,0 +1,13 @@
+
+[package]
+name = "shared"
+version = "0.1.0"
+edition = "2021"
+
+# build = "build.rs"
+
+[dependencies]
+slint = "1.12"
+
+[build-dependencies]
+slint-build = "1.12"

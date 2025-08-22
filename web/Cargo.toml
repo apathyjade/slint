@@ -1,0 +1,44 @@
+
+[package]
+name = "web"
+version = "0.1.0"
+edition = "2021"
+
+# build = "build.rs"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+
+[dependencies]
+shared = { path = "../shared" }
+slint = "1.12"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+console_error_panic_hook = { version = "0.1", optional = true }
+[dependencies.web-sys]
+version = "0.3"
+features = [
+  'Window',
+  'Document',
+  'Element',
+  'console',
+  'HtmlElement',
+  'MouseEvent',
+  'Worker',
+  'MessageEvent',
+  'HtmlInputElement',
+  'CanvasRenderingContext2d',
+  'CssStyleDeclaration',
+  'EventTarget',
+  'HtmlCanvasElement',
+  'Node',
+]
+[dependencies.js-sys]
+version = "0.3"
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3"

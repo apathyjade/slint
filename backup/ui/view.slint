@@ -1,0 +1,44 @@
+import {GroupBox, LineEdit, Button} from "std-widgets.slint";
+
+export global ViewAction {
+    callback change-text(string);
+}
+
+export component ViewWindow inherits Window {
+    title: "Main Window";
+    width: 600px;
+    always-on-top: true;
+    background: #fcfdfe;
+    height: 500px;
+
+    in property <string> value: "请输入" ;
+
+    VerticalLayout { 
+        alignment:start;
+        padding-left: 25px;
+        padding-right: 25px;
+
+        Text {
+            text: "这可能是个标题";
+            font-size: 27px;
+            font-weight: 700;
+            color: #6776FF;
+         }
+
+        GroupBox{
+            title:"lineEdit";
+            LineEdit {
+                text: value;
+                placeholder-text: "enter text";
+            }
+        }
+
+        Button {
+            text: "click me";
+            clicked => {
+                // self.text = "Clicked";
+                ViewAction.change-text(self.text);
+            }
+        }
+    }
+}

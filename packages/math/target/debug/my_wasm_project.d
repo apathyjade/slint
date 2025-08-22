@@ -1,1 +1,0 @@
-D:\project\github\apathyjade\rust-test\packages\math\target\debug\my_wasm_project.dll: D:\project\github\apathyjade\rust-test\packages\math\build.rs D:\project\github\apathyjade\rust-test\packages\math\src\lib.rs

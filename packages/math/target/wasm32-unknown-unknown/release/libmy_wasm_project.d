@@ -1,1 +1,0 @@
-D:\project\github\apathyjade\rust-test\packages\math\target\wasm32-unknown-unknown\release\libmy_wasm_project.rlib: D:\project\github\apathyjade\rust-test\packages\math\build.rs D:\project\github\apathyjade\rust-test\packages\math\src\lib.rs

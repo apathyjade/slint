@@ -1,0 +1,83 @@
+import { GroupBox, LineEdit, Button, Spinner, Slider  } from "std-widgets.slint";
+
+export global AppAction {
+    callback change-text(string);
+}
+
+export component App inherits Window {
+    title: "Main Window";
+    full-screen: false;
+    no-frame: true;
+    // width: 600px;
+    // height: 500px;
+    always-on-top: true;
+    background: #fcfdfe;
+
+    in property <string> value: "请输入" ;
+    callback file-new();
+    callback file-open();
+
+    MenuBar {
+        Menu {
+            title: @tr("MenuBar" => "File");
+            MenuItem { title: @tr("MenuBar" => "Open"); }
+            Menu {
+                title: @tr("MenuBar" => "Open Recent");
+                MenuItem { title: @tr("MenuBar" => "Recent {}", 1);  }
+            }
+            MenuSeparator {}
+            MenuItem { title: @tr("MenuBar" => "Save"); }
+            Menu {
+                title: @tr("MenuBar" => "Save As");
+            }
+        }
+        Menu {
+            title: @tr("MenuBar" => "Edit");
+            MenuItem { title: @tr("MenuBar" => "Copy"); }
+            MenuItem { title: @tr("MenuBar" => "Paste"); }
+        }
+    }
+    Rectangle {
+        background: #f60;
+        border-radius: 12px;
+        width: parent.width;
+        height: parent.height;
+        VerticalLayout { 
+            alignment:LayoutAlignment.start;
+            padding-left: 25px;
+            padding-right: 25px;
+
+            Text {
+                text: "这可能是个标题";
+                font-size: 27px;
+                font-weight: 700;
+                color: #6776FF;
+            }
+
+            GroupBox{
+                title:"lineEdit";
+                LineEdit {
+                    text: value;
+                    placeholder-text: "enter text";
+                }
+            }
+
+            Button {
+                text: "click me";
+                clicked => {
+                    // self.text = "Clicked";
+                    AppAction.change-text(self.text);
+                }
+            }
+            Slider {
+                value: 80;
+                changed(value) => {
+                    debug("New value: ", value);
+                }
+            }
+        }
+        Spinner {
+            indeterminate: true;
+        }
+    }
+}
