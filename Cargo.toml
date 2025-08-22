@@ -1,4 +1,8 @@
-
 [workspace]
-members = ["shared","web"]
+members = ["shared", "web"]
 resolver = "2"
+
+# [profile.dev]
+# incremental = true
+# [profile.dev.build-override]
+# opt-level = 0
