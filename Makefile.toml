@@ -1,0 +1,6 @@
+
+[tasks.web]
+script = [
+  "cd ./web",
+  "wasm-pack build --target web --out-dir pkg",
+]

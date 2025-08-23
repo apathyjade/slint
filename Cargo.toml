@@ -2,7 +2,13 @@
 members = ["shared", "web"]
 resolver = "2"
 
+[build-dependencies]
+cargo-make = "0.37"
+
 [profile.dev]
 incremental = true
-[profile.dev.build-override]
-opt-level = 0
+build-override = { opt-level = 0 }
+
+[profile.release]
+lto = true
+codegen-units = 250

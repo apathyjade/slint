@@ -4,6 +4,9 @@ use std::env;
 fn main() {
     // 设置环境变量以便在开发时重新运行
     // println!("cargo:rerun-if-env-changed=PROFILE");
+    if env::var("--target").unwrap_or("".to_string()).starts_with("wasm") {
+        return
+    }
     
     // 检查 wasm-pack 是否存在
     if let Err(_) = Command::new("wasm-pack").arg("--version").output() {
@@ -22,21 +25,21 @@ fn main() {
        .arg("--target")
        .arg("web")
        .arg("--out-dir")
-       .arg("pkg")
-       .arg("--mode")
-       .arg("no-install");
+       .arg("pkg");
+    //    .arg("--mode")
+    //    .arg("no-install");
 
     // 安全地获取构建配置
-    let profile = env::var("PROFILE").unwrap_or_else(|_| "debug".to_string());
-    let profile_arg = if profile == "release" {
-        "--release"
-    } else {
-        "--dev"
-    };
-    cmd.arg(profile_arg);
+    // let profile = env::var("PROFILE").unwrap_or_else(|_| "debug".to_string());
+    // let profile_arg = if profile == "release" {
+    //     "--release"
+    // } else {
+    //     "--dev"
+    // };
+    // cmd.arg(profile_arg);
     
     // 添加更多日志信息
-    println!("正在构建，配置: {:?}, 参数: {:?}", profile, profile_arg);
+    // println!("正在构建，配置: {:?}, 参数: {:?}", profile, profile_arg);
     println!("执行命令: {:?}", cmd);
     
     // 检查目标目录
