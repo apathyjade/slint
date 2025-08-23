@@ -5,11 +5,13 @@ fn main() {
     eprintln!("Starting Slint compilation...");
     let config = slint_build::CompilerConfiguration::new().with_style("fluent".into());
     eprintln!("Compiling ui/main.slint...");
-    slint_build::compile_with_config("ui/main.slint", config)
-        .unwrap_or_else(|e| {
-            eprintln!("Failed to compile Slint UI file: {}", e);
-            eprintln!("Current directory: {:?}", std::env::current_dir());
-            eprintln!("UI file exists: {:?}", std::path::Path::new("ui/main.slint").exists());
-            std::process::exit(1);
-        });
+    slint_build::compile_with_config("ui/main.slint", config).unwrap_or_else(|e| {
+        eprintln!("Failed to compile Slint UI file: {}", e);
+        eprintln!("Current directory: {:?}", std::env::current_dir());
+        eprintln!(
+            "UI file exists: {:?}",
+            std::path::Path::new("ui/main.slint").exists()
+        );
+        std::process::exit(1);
+    });
 }
