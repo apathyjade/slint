@@ -1,0 +1,22 @@
+[package]
+name = "android"
+version = "0.1.0"
+edition = "2021"
+
+build = "build.rs"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+shared = { path = "../shared" }
+slint = { version = "1.12", features = ["backend-android-activity-06"] }
+
+[build-dependencies]
+cargo-make = "0.37"
+
+[package.metadata.android]
+package = "com.aj.com"
+build_targets = ["aarch64-linux-android", "x86_64-linux-android"]
+# assets = "apk"
+apk_name = "myapp"

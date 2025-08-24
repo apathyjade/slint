@@ -1,8 +1,11 @@
-import { GroupBox, LineEdit, Button, Spinner, Slider  } from "std-widgets.slint";
+import { GroupBox, LineEdit, Button, Spinner, Slider, HorizontalBox  } from "std-widgets.slint";
+
+import { FontWeight } from "font.slint";
 
 export global AppAction {
     // callback change-text(string);
 }
+
 
 export component MainWindow inherits Window {
     title: "Main Window";
@@ -10,11 +13,26 @@ export component MainWindow inherits Window {
     // no-frame: true;
     // always-on-top: true;
     background: #f4f8fc;
-    default-font-family: "Microsoft YaHei";
+    default-font-family: "阿里巴巴普惠体 3.0";
 
     in property <string> value: "请输入" ;
     // callback file-new();
     // callback file-open();
+    HorizontalBox {
+        Text {
+            text: "这可能是个left";
+            font-size: 24px;
+            font-weight: FontWeight.Light;
+            color: #6776FF;
+        }
+
+        Text {
+            text: "这可能是个rigth";
+            font-size: 24px;
+            font-weight: FontWeight.Regular;
+            color: #6776FF;
+        }
+    }
     Rectangle {
         // background: #f60;
         // border-radius: 12px;
@@ -25,10 +43,36 @@ export component MainWindow inherits Window {
             padding-left: 24px;
             padding-right: 24px;
 
+            
             Text {
                 text: "这可能是个标题";
-                font-size: 27px;
-                font-weight: 700;
+                font-size: 24px;
+                font-weight: FontWeight.Light;
+                color: #6776FF;
+            }
+
+            Text {
+                text: "这可能是个标题";
+                font-size: 24px;
+                font-weight: FontWeight.Regular;
+                color: #6776FF;
+            }
+            Text {
+                text: "这可能是个标题";
+                font-size: 24px;
+                font-weight: FontWeight.Medium;
+                color: #6776FF;
+            }
+            Text {
+                text: "这可能是个标题";
+                font-size: 24px;
+                font-weight: FontWeight.SemiBold;
+                color: #6776FF;
+            }
+            Text {
+                text: "这可能是个标题";
+                font-size: 24px;
+                font-weight: FontWeight.Bold;
                 color: #6776FF;
             }
 

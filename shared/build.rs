@@ -1,7 +1,7 @@
 fn main() {
     // 添加重新运行条件，当UI文件或构建脚本改变时重新运行
-    // println!("cargo:rerun-if-changed=ui/main.slint");
-    // println!("cargo:rerun-if-changed=build.rs");
+    println!("cargo:rerun-if-changed=ui/main.slint");
+    println!("cargo:rerun-if-changed=build.rs");
     eprintln!("Starting Slint compilation...");
     let config = slint_build::CompilerConfiguration::new().with_style("fluent".into());
     eprintln!("Compiling ui/main.slint...");

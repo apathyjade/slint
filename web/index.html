@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <title>Slint</title>
@@ -9,7 +9,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            font-family: "Microsoft YaHei";
+            overflow: hidden;
         }
 
         #canvas {
@@ -25,14 +25,10 @@
 <canvas id="canvas"></canvas>
 <script type="module">
     // 加载 Wasm 模块
-    import init from "./pkg/web.js";
+    import init, {  } from "./pkg/web.js";
 
     init().then(() => {
-        console.log("Slint Web 应用启动成功", run);
-        // const canvas = document.getElementById('canvas');
-
-        // const ctx = canvas.getContext('2d');
-        // console.log("Canvas 使用的字体:", ctx.font);
+        console.log("Slint Web 应用启动成功");
     });
 
 
