@@ -1,0 +1,38 @@
+[tasks.build]
+command = "cargo"
+args = ["bundle", "--release"]
+
+[tasks.dev]
+command = "cargo"
+args = ["run"]
+
+# window 依赖 WiX Toolset
+# linux 依赖 linuxdeploy
+
+
+# mac 依赖 create-dmg
+# brew install create-dmg
+[tasks.dmg]
+command = "create-dmg"
+args = [
+  "--no-internet-enable", "\\",
+  "--volname", "\"MyAppInstaller\"", "\\",
+  "--volicon", "./assets/MyApp.icns", "\\",
+  "--window-pos", "400 200",
+  "--window-size", "660 400", "\\",
+  "--icon", "./assets/MyApp.icns", "\\",
+  "--icon-size", "100", "\\",
+  "./dist/Installer.dmg", "\\",
+  "../target/release/bundle/osx/MyApp.app",
+  # "--app-drop-link", "500 185"
+]
+
+[tasks.pkg]
+command = "pkgbuild"
+args = [
+  "--root", "../target/release/bundle/osx/",
+  "--identifier", "com.apathyjade.app",
+  "--version", "1.0",
+  "--install-location", "/Applications",
+  "MyApp.pkg"
+]

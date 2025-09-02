@@ -1,0 +1,7 @@
+[tasks.build]
+command = "cargo"
+args = ["build", "--target=aarch64-apple-ios"]
+
+[tasks.dev]
+command = "cargo"
+args = ["apk", "run", "--lib"]
