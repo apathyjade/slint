@@ -2,6 +2,9 @@
 name = "pc"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+authors = ["apathyjade"]
+description = "my app for pc"
 
 build = "build.rs"
 
@@ -12,12 +15,10 @@ slint = "1.12"
 [build-dependencies]
 cargo-make = "0.37"
 
-
 [package.metadata.bundle]
 name = "MyApp"
 identifier = "com.apathyjade.app"
-icon = ["./assets/icon.png"]
-resources = ["./assets/"] 
+icon = ["icon.png"]
+resources = ["assets/"]
 description = "xxx"
 version = "1.0.0"
-# copyright = ""

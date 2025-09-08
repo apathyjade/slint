@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <ComponentGroup Id="AppComponents">
+      <Component Id="MainExecutable" Directory="INSTALLDIR" Guid="*">
+        <File Source="../target/x86_64-pc-windows-msvc/release/pc.exe" KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

@@ -1,0 +1,6 @@
+D:\project\github\apathyjade\slint\setup\obj\Debug\QuickStart.wixproj.CoreCompileInputs.cache
+D:\project\github\apathyjade\slint\setup\bin\Debug\QuickStart.msi
+D:\project\github\apathyjade\slint\setup\bin\Debug\QuickStart.wixpdb
+D:\project\github\apathyjade\slint\setup\obj\Debug\QuickStart.msi
+D:\project\github\apathyjade\slint\setup\obj\Debug\QuickStart.wixpdb
+D:\project\github\apathyjade\slint\setup\obj\Debug\QuickStart.wixproj.BindTracking-neutral.txt

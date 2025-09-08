@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <UI Id="CustomUI">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8"/>
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal"/>
+      
+      <DialogRef Id="BrowseDlg"/>
+      <DialogRef Id="ExitDialog"/>
+      
+      <InstallUISequence>
+        <Show Dialog="ExitDialog" OnExit="success"/>
+      </InstallUISequence>
+    </UI>
+    
+    <UIRef Id="WixUI_InstallDir"/>
+  </Fragment>
+</Wix>

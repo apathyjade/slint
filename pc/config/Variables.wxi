@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Include>
+  <?define BinPath = "../../target/x86_64-pc-windows-msvc/release/pc.exe" ?>
+</Include>

@@ -1,14 +1,46 @@
-[tasks.build]
+[tasks.bundle]
 command = "cargo"
-args = ["bundle", "--release"]
+args = ["bundle", "--release", "--format",  "msi"]
 
 [tasks.dev]
 command = "cargo"
 args = ["run"]
 
-# window 依赖 WiX Toolset
-# linux 依赖 linuxdeploy
+[tasks.build_window]
+command = "cargo"
+args = ["build", "--release", "--target", "x86_64-pc-windows-msvc"]
 
+# window 依赖 WiX Toolset
+# "C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe"
+# linux 依赖 linuxdeploy
+[tasks.msi]
+command = "wix"
+args = [
+  "build",
+  "-arch", "x64",
+  "-o", "./dist/MyAppInstall.msi",
+  "./config/Product.wxs",
+  "./config/Components.wxs",
+  "./config/Config.wxs",
+  "./config/UI.wxs",
+]
+dependencies = ["build"]
+
+[tasks.debug_msi]
+command = "msiexec"
+args = [
+  "/i", "D:\\project\\github\\apathyjade\\slint\\pc\\dist\\MyAppInstall.msi", "/qn", "/l*vx", "D:\\project\\github\\apathyjade\\slint\\pc\\log.txt"
+]
+
+[tasks.sign]
+command = "signtool"
+args = [
+  "sign",
+  "/f", "./certs/MyCodeSignCert.pfx", "/p", "wxy0809",
+  "/fd", "SHA256",
+  "/t", "http://timestamp.digicert.com",
+  "./dist/MyAppInstall.msi"
+]
 
 # mac 依赖 create-dmg
 # brew install create-dmg

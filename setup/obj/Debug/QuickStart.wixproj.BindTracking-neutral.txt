@@ -1,0 +1,4 @@
+BuiltPdbOutput	D:\project\github\apathyjade\slint\setup\obj\Debug\QuickStart.wixpdb
+BuiltTargetOutput	D:\project\github\apathyjade\slint\setup\obj\Debug\QuickStart.msi
+Input	example.txt
+Intermediate	D:\project\github\apathyjade\slint\setup\obj\Debug\#cab1.cab
