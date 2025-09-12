@@ -1,3 +1,46 @@
-[workspace]
-members = ["shared", "pc", "android", "web", "backend"]
-resolver = "2"
+[package]
+name = "app"
+version = "0.1.0"
+edition = "2021"
+
+build = "build.rs"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+slint = "1.13"
+
+[target.'cfg(target_os = "android")'.dependencies]
+slint = { version = "1.13", features = ["backend-android-activity-06"] }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+
+[dev-dependencies]
+[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+miniserve = "0.31"
+
+[build-dependencies]
+slint-build = "1.13.1"
+cargo-make = "0.37"
+[target.'cfg(windows)'.build-dependencies]
+winres="0.1.12"
+
+[package.metadata.bundle]
+name = "MyApp"
+identifier = "com.apathyjade.app"
+icon = ["icon.png"]
+resources = ["assets/"]
+description = "xxx"
+version = "1.0.0"
+
+[package.metadata.winres]
+OriginalFilename = "PROGRAM.EXE"
+LegalCopyright = "Copyright © 2016"
+
+[package.metadata.android]
+package = "com.aj.com"
+build_targets = ["aarch64-linux-android", "x86_64-linux-android"]
+apk_name = "myapp"
