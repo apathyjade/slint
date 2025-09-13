@@ -28,6 +28,13 @@ cargo-make = "0.37"
 [target.'cfg(windows)'.build-dependencies]
 winres="0.1.12"
 
+[profile.release]
+lto = true
+panic = "abort"
+codegen-units = 1  # 牺牲编译速度换取更好的优化
+opt-level = "z"    # 最大化大小优化（比"3"更注重体积）
+strip = "debuginfo" # 移除调试信息
+
 [package.metadata.bundle]
 name = "MyApp"
 identifier = "com.apathyjade.app"
