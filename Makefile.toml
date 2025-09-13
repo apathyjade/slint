@@ -6,7 +6,7 @@ args = ["run", "--bin", "app"]
 
 [tasks.build]
 command = "cargo"
-args = ["build", "--bin", "app"]
+args = ["build", "--release", "--bin", "app"]
 
 [tasks.build_win]
 command = "cargo"
@@ -33,7 +33,17 @@ args = ["build", "--target", "web", "--out-dir", "target/pkg"]
 command = "cargo"
 args = ["clean"]
 
+[tasks.build_mac]
+# command = "cargo"
+# args = ["bundle", "--release", "--target", "x86_64-apple-darwin"]
+dependencies = ["build_mac_x86_64", "build_mac_aarch64"]
 
+[tasks.build_mac_x86_64]
+command = "cargo"
+args = ["bundle", "--release", "--target", "x86_64-apple-darwin"]
+[tasks.build_mac_aarch64]
+command = "cargo"
+args = ["bundle", "--release", "--target", "aarch64-apple-darwin"]
 
 
 # mac 依赖 create-dmg

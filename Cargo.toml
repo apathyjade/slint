@@ -25,8 +25,6 @@ miniserve = "0.31"
 [build-dependencies]
 slint-build = "1.13.1"
 cargo-make = "0.37"
-[target.'cfg(windows)'.build-dependencies]
-winres="0.1.12"
 
 [profile.release]
 lto = true
