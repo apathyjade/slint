@@ -45,9 +45,23 @@ args = ["bundle", "--release", "--target", "x86_64-apple-darwin"]
 command = "cargo"
 args = ["bundle", "--release", "--target", "aarch64-apple-darwin"]
 
-[tasks.build_linux_riscv64]
+[tasks.build_ios_x86_64]
 command = "cargo"
-args = ["bundle", "--release", "--target", "riscv64gc-unknown-linux-gnu"]
+args = ["build", "--release", "--target", "x86_64-apple-ios"]
+[tasks.build_ios_aarch64]
+command = "cargo"
+args = ["build", "--release", "--target", "aarch64-apple-ios"]
+
+
+
+[tasks.build_riscv64]
+command = "cargo"
+args = ["build", "--release", "--target", "riscv64gc-unknown-none-elf"]
+
+
+
+
+
 
 
 # mac 依赖 create-dmg

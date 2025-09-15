@@ -4,9 +4,12 @@ version = "0.1.0"
 edition = "2021"
 
 build = "build.rs"
+links = "riscv64-unknown-elf-g++"
 
 [lib]
-crate-type = ["cdylib"]
+# crate-type = ["cdylib"]
+
+crate-type = ["staticlib"]
 
 [dependencies]
 slint = "1.13"
