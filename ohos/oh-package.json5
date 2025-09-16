@@ -1,0 +1,9 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "My Rust-based HarmonyOS App",
+  "main": "",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+}

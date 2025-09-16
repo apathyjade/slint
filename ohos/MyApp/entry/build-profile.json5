@@ -1,0 +1,16 @@
+{
+  "apiType": "stageMode",
+  "buildOption": {
+    "externalNativeOptions": {
+      "path": "./src/main/cpp/CMakeLists.txt"
+    }
+  },
+  "targets": [
+    {
+      "name": "default",
+      "config": {
+        "arkVersion": "5.0.0.25"
+      }
+    }
+  ]
+}

@@ -53,6 +53,11 @@ command = "cargo"
 args = ["build", "--release", "--target", "aarch64-apple-ios"]
 
 
+[tasks.build_ohos_x86_64]
+command = "cargo"
+args = ["build", "--release", "--verbose", "--target", "x86_64-unknown-linux-ohos", "--bin", "app"]
+
+
 
 [tasks.build_riscv64]
 command = "cargo"

@@ -599,6 +599,7 @@ dependencies = [
  "slint-build",
  "wasm-bindgen",
  "wasm-bindgen-futures",
+ "winit",
 ]
 
 [[package]]

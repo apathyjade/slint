@@ -7,11 +7,19 @@ build = "build.rs"
 
 [lib]
 # crate-type = ["cdylib"]
+crate-type = ["staticlib", "rlib"]
 
-crate-type = ["staticlib"]
+[[bin]]
+name = "app"
+path = "src/main.rs"
+
+# crate-type = ["staticlib"]
 
 [dependencies]
-slint = "1.13"
+# slint = "1.13"
+slint = { version = "1.13", default-features = false, features = ["backend-winit", "renderer-software", "compat-1-2"] }
+winit = { version = "0.30.12", default-features = false, features = ["wayland"] }
+
 
 [target.'cfg(target_os = "android")'.dependencies]
 slint = { version = "1.13", features = ["backend-android-activity-06"] }
@@ -29,11 +37,11 @@ slint-build = "1.13.1"
 cargo-make = "0.37"
 
 [profile.release]
-lto = true
-panic = "abort"
-codegen-units = 1  # 牺牲编译速度换取更好的优化
-opt-level = "z"    # 最大化大小优化（比"3"更注重体积）
-strip = "debuginfo" # 移除调试信息
+# lto = true
+# panic = "abort"
+# codegen-units = 1  # 牺牲编译速度换取更好的优化
+# opt-level = "z"    # 最大化大小优化（比"3"更注重体积）
+# strip = "debuginfo" # 移除调试信息
 
 [package.metadata.bundle]
 name = "MyApp"

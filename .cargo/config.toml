@@ -1,10 +1,22 @@
+[build]
+target = "x86_64-unknown-linux-ohos"
+
 [target.x86_64-unknown-linux-ohos]
-linker = "$OHOS_NDK_HOME/llvm/bin/clang++"
+linker = "./ohos_linker.sh"
+# linker = "/Users/jade/Library/OpenHarmony/Sdk/20/native/llvm/bin/clang++"
 rustflags = [
-    "-C", "link-arg=--sysroot=$OHOS_NDK_HOME/sysroot",
-    "-C", "link-arg=-L$OHOS_NDK_HOME/sysroot/usr/lib/x86_64-linux-ohos",
-    "-C", "link-arg=-I$OHOS_NDK_HOME/llvm/include/c++/v1",
-    # 链接C++标准库（必要时添加）
-    "-C", "link-arg=-lc++",
-    "-C", "link-arg=-lc++abi",
+    "-C", "link-arg=--sysroot=/Users/jade/Library/OpenHarmony/Sdk/20/native/sysroot",
+    "-C", "link-arg=-L/Users/jade/Library/OpenHarmony/Sdk/20/native/sysroot/usr/lib/x86_64-linux-ohos",
+    "-C", "link-arg=-lc",
+    "-C", "link-arg=-ldl",
+    "-C", "link-arg=-fuse-ld=lld",
+    "-C", "link-arg=-Wl,--allow-shlib-undefined",
 ]
+
+[env]
+CXX = "/Users/jade/Library/OpenHarmony/Sdk/20/native/llvm/bin/clang++"
+CC = "/Users/jade/Library/OpenHarmony/Sdk/20/native/llvm/bin/clang"
+CXXFLAGS = "--sysroot=/Users/jade/Library/OpenHarmony/Sdk/20/native/sysroot"
+CCFLAGS = "--sysroot=/Users/jade/Library/OpenHarmony/Sdk/20/native/sysroot"
+SLINT_NO_QT = "1"
+
